@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title><meta name="description" content="Aliya S — BCA student in AI and Data Science. Aspiring Data Analyst and Python Developer building data-driven tools and predictive models." />
+<meta name="theme-color" content="#0b0b17" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📊%3C/text%3E%3C/svg%3E" />Aliya S — Data & AI</title>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Aliya S — Data & AI Portfolio" />
+<meta property="og:description" content="BCA student in AI and Data Science. Projects in data analysis, machine learning and Python web apps." />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet" />
+<style>
+:root{--ink:#f5f1e8;--muted:#dcd9e8;--navy:#0b0b17;--violet:#8e73ff;--violet-soft:#b6a8ff;--gold:#e8bd75;--line:rgba(255,255,255,.14);--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif;--mono:"DM Mono",monospace;color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--navy);color:var(--ink);font-family:var(--sans);line-height:1.6;overflow-x:hidden;text-shadow:0 1px 10px rgba(11,11,23,.85)}
+a{color:inherit}
+.wrap{width:min(1120px,calc(100% - 48px));margin:0 auto}
+.progress{position:fixed;top:0;left:0;width:100%;height:3px;z-index:40;background:rgba(255,255,255,.08)}
+.progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--violet),var(--gold));box-shadow:0 0 16px var(--violet)}
+header{position:sticky;top:0;z-index:30;border-bottom:1px solid var(--line);background:rgba(11,11,23,.66);backdrop-filter:blur(18px)}
+nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-size:.95rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.brand-mark{width:30px;height:30px;display:grid;place-items:center;border:1px solid rgba(232,189,117,.7);color:var(--gold);border-radius:50%;font-family:var(--serif);font-size:.9rem}
+.navlinks{display:flex;gap:clamp(12px,3vw,32px);list-style:none}
+.navlinks a{color:var(--muted);text-decoration:none;font-size:.77rem;letter-spacing:.08em;text-transform:uppercase;transition:color .25s}
+.navlinks a:hover{color:var(--gold)}
+.hero{min-height:calc(100svh - 76px);display:grid;align-items:center;padding:100px 0 120px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1fr;align-items:center;gap:7vw}
+.eyebrow,.kicker{color:var(--violet-soft);font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase}
+.eyebrow{margin-bottom:22px}
+h1{font:600 clamp(2.2rem,4vw,4.5rem)/.94 var(--serif);letter-spacing:-.055em;max-width:20ch}
+h1 em{color:var(--gold);font-weight:600}
+.lede{color:var(--muted);font-size:clamp(1rem,1.6vw,1.18rem);max-width:52ch;margin-top:28px}
+.hero-actions{margin-top:36px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:13px 19px;text-decoration:none;font-size:.86rem;font-weight:700;transition:transform .25s,box-shadow .25s,background .25s}
+.btn-primary{color:#17121d;background:var(--gold);box-shadow:0 10px 32px rgba(232,189,117,.16)}
+.btn-ghost{border:1px solid var(--line);color:var(--ink)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 35px rgba(0,0,0,.28)}
+.hero,.chapter,footer{position:relative;z-index:1}
+
+.nameplate{display:inline-flex;flex-direction:column;align-items:flex-start;margin-bottom:28px}
+.nameplate strong{color:var(--ink);font:600 clamp(3rem,7vw,6.2rem)/.9 var(--serif);letter-spacing:-.065em;text-shadow:0 4px 25px rgba(11,11,23,.55),0 0 35px rgba(142,115,255,.2)}
+.scroll-cue{position:absolute;bottom:38px;left:0;color:var(--muted);font:.68rem var(--mono);letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.scroll-cue::after{content:"";width:44px;height:1px;background:var(--gold)}
+.chapter{padding:128px 0;position:relative}
+.chapter-head{display:flex;align-items:end;justify-content:space-between;gap:30px;padding-bottom:30px;border-bottom:1px solid var(--line);margin-bottom:45px}
+h2{font:600 clamp(2.5rem,5vw,4.8rem)/1 var(--serif);letter-spacing:-.045em}
+.chapter-head p{max-width:32ch;color:var(--muted);font-size:.92rem}
+
+/* About box */
+.paper{color:var(--ink);border:1px solid var(--line);background:linear-gradient(145deg,rgba(24,21,48,.82),rgba(11,11,23,.7));backdrop-filter:blur(8px);position:relative;overflow:hidden;transition:transform .35s,border-color .35s}
+.paper:hover{border-color:rgba(232,189,117,.55);transform:translateY(-8px)}
+.paper::after{content:"";position:absolute;width:260px;height:260px;right:-90px;top:-100px;border:1px solid rgba(182,168,255,.18);border-radius:50%;box-shadow:0 0 0 25px rgba(182,168,255,.03),0 0 0 50px rgba(182,168,255,.03);pointer-events:none}
+.about-paper{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;padding:clamp(28px,6vw,72px)}
+.about-paper p{color:var(--muted);max-width:57ch}
+.about-paper p+p,.about-paper .kicker+p{margin-top:20px}
+.facts{list-style:none;border-top:1px solid var(--line)}
+.facts li{padding:13px 0;display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);font-size:.83rem}
+.facts li span:first-child{color:var(--muted)}
+.facts li span:last-child{text-align:right;font-weight:600}
+
+.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project{min-height:250px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(24,21,48,.82),rgba(11,11,23,.7));padding:28px;position:relative;backdrop-filter:blur(8px);transition:transform .35s,border-color .35s,background .35s}
+.project:hover{transform:translateY(-8px) rotate(.4deg);border-color:rgba(232,189,117,.55);background:linear-gradient(145deg,rgba(142,115,255,.18),rgba(255,255,255,.04))}
+.project.featured{grid-column:span 2;min-height:290px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(120deg,rgba(60,48,130,.7),rgba(11,11,23,.7))}
+.project-index{color:var(--gold);font:.72rem var(--mono)}
+.project h3{font:600 1.6rem/1.1 var(--serif);margin:24px 0 12px}
+.project h3 a,.project h3 a:hover{text-decoration:none;color:inherit}
+.project h3 a:hover{opacity:.75}
+.project p{color:var(--muted);font-size:.9rem;max-width:60ch}
+.tools{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px}
+.tag{border:1px solid rgba(182,168,255,.45);color:#d3c9ff;background:rgba(11,11,23,.5);border-radius:999px;padding:3px 9px;font:.68rem var(--mono)}
+.skills-layout{display:grid;grid-template-columns:.75fr 1.25fr;gap:80px}
+.skills-intro{color:var(--muted);max-width:31ch}
+.skill-row{display:grid;grid-template-columns:130px 1fr;gap:24px;padding:18px 0;border-top:1px solid var(--line)}
+.skill-row dt{color:var(--gold);font:.72rem var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.skill-row dd{display:flex;flex-wrap:wrap;gap:8px}
+.cert-spread{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cert{padding:30px;min-height:190px;backdrop-filter:blur(8px);background:linear-gradient(145deg,rgba(24,21,48,.82),rgba(11,11,23,.7));border:1px solid var(--line);position:relative;overflow:hidden;transition:transform .3s,border-color .3s}
+.cert:hover{transform:translateY(-6px);border-color:var(--gold)}
+.cert.featured{background:linear-gradient(145deg,rgba(232,189,117,.2),rgba(142,115,255,.11));border-color:rgba(232,189,117,.45)}
+.cert-badge{display:inline-grid;place-items:center;width:35px;height:35px;border:1px solid var(--gold);border-radius:50%;color:var(--gold);font:.8rem var(--serif)}
+.cert h3{margin-top:24px;font:600 1.28rem/1.1 var(--serif);max-width:16ch}
+.cert p{margin-top:10px;color:var(--muted);font:.72rem var(--mono)}
+.letter-spacing:.18em;transform:rotate(-90deg)}
+.timeline{border-left:1px solid var(--gold);padding-left:24px}
+.timeline-item{position:relative;margin-bottom:32px}
+.timeline-item::before{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:var(--gold);left:-29px;top:9px;box-shadow:0 0 12px var(--gold)}
+.timeline h3{font:600 1.35rem var(--serif)}
+.timeline time{color:var(--violet-soft);font:.7rem var(--mono)}
+.timeline p{color:var(--muted);font-size:.9rem;margin-top:8px}
+.list-plain{list-style:none;border-top:1px solid var(--line)}
+.list-plain li{padding:15px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.list-plain strong{color:var(--ink)}
+footer{padding:140px 0 80px;text-align:center}
+footer h2{font-size:clamp(3rem,8vw,7rem);max-width:8ch;margin:auto}
+footer p{color:var(--muted);max-width:48ch;margin:22px auto 0}
+.contact-links{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 24px;margin-top:36px}
+.contact-links a{color:var(--gold);font:.76rem var(--mono);text-decoration:none;border-bottom:1px solid rgba(232,189,117,.38);padding-bottom:4px}
+.foot-note{margin-top:88px;color:#9a96b0;font:.68rem var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+.reveal.visible{opacity:1;transform:none}
+@media (max-width:760px){
+.wrap{width:min(100% - 34px,1120px)}
+.navlinks{gap:10px}.navlinks a{font-size:.62rem}
+.hero{padding-top:70px}
+.hero-grid,.about-paper,.skills-layout,.two-col{grid-template-columns:1fr;gap:45px}
+.chapter{padding:88px 0}
+.chapter-head{display:block}.chapter-head p{margin-top:18px}
+.project-grid,.cert-spread{grid-template-columns:1fr}
+.project.featured{grid-column:span 1}
+.skill-row{grid-template-columns:1fr;gap:10px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.cert-link{display:inline-block;margin-top:14px;color:var(--gold);font:.72rem var(--mono);text-decoration:none;border-bottom:1px solid rgba(232,189,117,.38);padding-bottom:2px}
+.cert-link:hover{opacity:.75}
+.chapter-head .kicker{display:none}
+/* One accent color (gold) */
+:root{--violet:#e8bd75;--violet-soft:#cdbf9f}
+.tag{border-color:rgba(232,189,117,.4);color:#e8d9b8}
+.project:hover{background:linear-gradient(145deg,rgba(232,189,117,.08),rgba(255,255,255,.03))}
+.project.featured{background:linear-gradient(120deg,rgba(232,189,117,.10),rgba(11,11,23,.7))}
+.paper::after{border-color:rgba(232,189,117,.15);box-shadow:0 0 0 25px rgba(232,189,117,.03),0 0 0 50px rgba(232,189,117,.03)}
+.nameplate strong{text-shadow:none}
+
+/* No lifting or rotating on hover; border change only */
+.project:hover,.paper:hover,.cert:hover{transform:none}
+
+</style>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><span></span></div>
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#top"><span class="brand-mark">A</span> Aliya S</a>
+    <ul class="navlinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="top">
+  <section class="hero wrap">
+    <div class="hero-grid">
+      <div class="reveal">
+        <div class="nameplate"><strong>Aliya S</strong></div>
+        <div class="eyebrow">BCA · AI &amp; Data Science · 2025—2029</div>
+        <h1>Aspiring Data Analyst & Python Developer. </h1>
+        <p class="lede">Building data-driven tools, predictive models, and clear visual explanations.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">Explore the work <span>↗</span></a>
+          <a class="btn btn-ghost" href="Aliya_S_Resume.pdf" download>Download Resume ↓</a>
+          <a class="btn btn-ghost" href="mailto:aliyaparis2023@gmail.com">Start a conversation</a>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <section class="chapter wrap reveal" id="about" data-chapter="01">
+    <div class="chapter-head">
+      <div><div class="kicker">About</div><h2> About Me.</h2></div>
+      <p>Curious by nature, rigorous by practice — with a bias toward making complex things feel simple.</p>
+    </div>
+    <div class="paper about-paper">
+      <div>
+        
+        <p>I’m Aliya S, a second-year BCA student specializing in AI and Data Science at Ilahia College of Arts and Science (2025-2029). I enjoy turning raw data into clear insights and building models that help people make better decisions.</p>
+        <p>I work mainly in Python and SQL, using Pandas, NumPy, Matplotlib, Seaborn, and Scikit-learn for data cleaning, exploratory analysis, visualization, and machine learning. My projects include a student dropout prediction model built on more than 79,000 records, a sales data analysis, and a student performance study. I also built and deployed PricePrism, a full-stack web app that compares product prices across online stores and highlights the cheapest option.</p>
+        <p>I recently completed a one-month Data Science Internship at Codemax Digital Solutions, where I applied these skills to real datasets. I hold certifications from Google (Data Analytics and AI) and Simplilearn (Python for Data Science, Machine Learning, and Deep Learning).</p>
+        <p>Beyond academics, I’m IPR Lead at my college’s IEDC, a state-level volleyball participant, and a competitor in the Hackspire 24-hour ideathon.</p>
+        <p>I’m open to internships and entry-level roles in data analysis, AI/ML, and software engineering.</p>
+      </div>
+      <ul class="facts">
+        <li><span>College</span><span>Ilahia College of Arts &amp; Science</span></li>
+        <li><span>Program</span><span>BCA, AI &amp; Data Science</span></li>
+        <li><span>Year</span><span>2nd year · 2025—2029</span></li>
+        <li><span>Open to</span><span>Internships &amp; entry-level roles</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="chapter wrap reveal" id="work" data-chapter="02">
+    <div class="chapter-head">
+      <div><div class="kicker">Projects</div><h2>Projects.</h2></div>
+      <p>Projects where analysis, engineering, and a little creative problem-solving meet.</p>
+    </div>
+    <div class="project-grid">
+      <article class="project featured">
+        <div>
+          <span class="project-index">01 / FEATURED BUILD</span>
+          <h3><a href="https://priceprism.onrender.com" target="_blank" rel="noopener noreferrer">PricePrism ↗</a></h3>
+          <p>A full-stack price comparison web app. Search any product and see its price at different online stores, with the cheapest option highlighted. Built and deployed live on Render.</p>
+        </div>
+        <div class="tools"><span class="tag">python</span><span class="tag">flask</span><span class="tag">javascript</span><span class="tag">serpapi</span><span class="tag">git</span></div>
+      </article>
+      <article class="project">
+        <span class="project-index">02 / PREDICTIVE</span>
+        <h3>Student Dropout Prediction</h3>
+<p>Analyzed GPA, attendance, financial stress, work hours, and LMS activity across 79,000+ student records to predict dropout risk. Compared two models on an imbalanced dataset: Random Forest reached 90.8% accuracy, while Logistic Regression caught 64.7% of actual dropouts (recall) versus 24.2%. <strong>Top predictors: semester GPA, financial stress, work hours, attendance.</strong></p>
+
+        <div class="tools"><span class="tag">pandas</span><span class="tag">numpy</span><span class="tag">scikit-learn</span></div>
+      </article>
+      <article class="project">
+        <span class="project-index">03 / INSIGHT</span>
+        <h3>Sales Data Analysis</h3>
+<p>Analyzed 1,709 sales records across 340 products (7,880 units sold) to find top performers by revenue and volume. <strong>Result: ₹71.8 lakh in total product sales; the top earner and the best seller by quantity were different products.</strong></p>
+        <div class="tools"><span class="tag">pandas</span><span class="tag">matplotlib</span><span class="tag">excel</span></div>
+      </article>
+      <article class="project">
+        <span class="project-index">04 / EXPLORATORY</span>
+        <h3>Student Performance Analysis</h3>
+        <p>Explored how attendance, study hours, stress, and sleep relate to exam scores with a correlation heatmap.</p>
+        <div class="tools"><span class="tag">pandas</span><span class="tag">numpy</span><span class="tag">seaborn</span></div>
+      </article>
+      <article class="project">
+        <span class="project-index">05 / FOUNDATIONS</span>
+        <h3>Score &amp; Iris Classification</h3>
+        <p>Linear regression for score prediction and a decision tree classifier evaluated through train/test splits and confusion matrices.</p>
+        <div class="tools"><span class="tag">scikit-learn</span><span class="tag">pandas</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="chapter wrap reveal" id="skills" data-chapter="03">
+    <div class="chapter-head">
+      <div><div class="kicker">Skills</div><h2>The working<br />toolkit.</h2></div>
+      <p>A practical stack for moving from raw rows to readable results.</p>
+    </div>
+    <div class="skills-layout">
+      <p class="skills-intro">I like learning tools in context: use the right library, understand the assumption behind it, then communicate the result clearly.</p>
+      <dl>
+        <div class="skill-row"><dt>Languages</dt><dd><span class="tag">python</span><span class="tag">sql</span><span class="tag">c</span><span class="tag">c++</span><span class="tag">javascript</span></dd></div>
+        <div class="skill-row"><dt>Data &amp; ML</dt><dd><span class="tag">eda</span><span class="tag">data cleaning</span><span class="tag">classification</span><span class="tag">regression</span><span class="tag">model evaluation</span></dd></div>
+        <div class="skill-row"><dt>Libraries</dt><dd><span class="tag">pandas</span><span class="tag">numpy</span><span class="tag">matplotlib</span><span class="tag">seaborn</span><span class="tag">scikit-learn</span></dd></div>
+        <div class="skill-row"><dt>Web</dt><dd><span class="tag">flask</span><span class="tag">html</span><span class="tag">css</span><span class="tag">javascript</span><span class="tag">rest apis</span></dd></div>
+        <div class="skill-row"><dt>Tools</dt><dd><span class="tag">jupyter</span><span class="tag">google colab</span><span class="tag">git</span><span class="tag">github</span><span class="tag">excel</span><span class="tag">kaggle</span></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="chapter wrap reveal" id="credentials" data-chapter="04">
+    <div class="chapter-head">
+      <div><div class="kicker">Chapter four</div><h2>Certifications and<br />Credentials.</h2></div>
+      <p>Credentials that mark the foundations I’ve built — and the direction I’m headed.</p>
+    </div>
+    <div class="cert-spread">
+      <article class="cert"><span class="cert-badge">01</span><h3>Google Data Analytics</h3><p>GOOGLE · DATA FOUNDATIONS</p><a class="cert-link" href="https://lnkd.in/p/dEp8gjVc" target="_blank" rel="noopener">View credential ↗</a></article>
+<article class="cert"><span class="cert-badge">02</span><h3>Google AI</h3><p>GOOGLE · ARTIFICIAL INTELLIGENCE</p><a class="cert-link" href="https://lnkd.in/p/d4g3T2CR" target="_blank" rel="noopener">View credential ↗</a></article>
+<article class="cert"><span class="cert-badge">03</span><h3>Python Libraries for Data Science</h3><p>SIMPLILEARN · PYTHON</p><a class="cert-link" href="https://lnkd.in/p/dNBNxfWH" target="_blank" rel="noopener">View credential ↗</a></article>
+<article class="cert"><span class="cert-badge">04</span><h3>Machine Learning for Beginners</h3><p>SIMPLILEARN · MACHINE LEARNING</p><a class="cert-link" href="https://lnkd.in/p/dDH9RJsq" target="_blank" rel="noopener">View credential ↗</a></article>
+<article class="cert"><span class="cert-badge">05</span><h3>Deep Learning for Beginners</h3><p>SIMPLILEARN · DEEP LEARNING</p><a class="cert-link" href="https://lnkd.in/p/dSvsPKaF" target="_blank" rel="noopener">View credential ↗</a></article>
+<article class="cert"><span class="cert-badge">06</span><h3>C++ Programming</h3><p>G-TEC · PROGRAMMING</p><a class="cert-link" href="https://lnkd.in/p/dzmfMeWR" target="_blank" rel="noopener">View credential ↗</a></article>
+<article class="cert"><span class="cert-badge">07</span><h3>Create Image captioning Models</h3><p>SIMPLILEARN </p><a class="cert-link" href="https://lnkd.in/p/devgJhHm" target="_blank" rel="noopener">View credential ↗</a></article>
+<article class="cert"><span class="cert-badge">08</span><h3>Hackspire 2026 – Ideathon Participant</h3><p>COCHIN ARTS AND SCIENCE</p><a class="cert-link" href="https://lnkd.in/p/dQW4Kd5P" target="_blank" rel="noopener">View certificate ↗</a></article>
+<article class="cert"><span class="cert-badge">09</span><h3>IEDC Summit 2026 – Participant</h3><p>IEDC · SUMMIT 2026</p><a class="cert-link" href="https://lnkd.in/p/dM_2Ve2D" target="_blank" rel="noopener">View certificate ↗</a></article>  </section>
+
+  <section class="chapter wrap reveal" data-chapter="05">
+    <div class="chapter-head">
+      <div><div class="kicker">Chapter five</div><h2>Beyond the<br />spreadsheet.</h2></div>
+      <p>The experiences that shape how I collaborate, lead, and keep showing up.</p>
+    </div>
+    <div class="two-col">
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Data Science Intern</h3>
+          <time>SEPT 2026 · 1 MONTH · CODEMAX DIGITAL SOLUTIONS</time>
+          <p>Worked hands-on with Python, data cleaning, EDA, visualization, regression, classification, and model evaluation.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>BCA, AI &amp; Data Science</h3>
+          <time>2025 — 2029 · ILAHIA COLLEGE OF ARTS AND SCIENCE</time>
+          <p>82% in Semester 2. Building a strong base across programming, analytics, and machine learning.</p>
+        </div>
+      </div>
+      <ul class="list-plain">
+        <li><strong>IPR Lead</strong>, IEDC — Ilahia College</li>
+        <li><strong>State-Level Volleyball</strong> participant</li>
+        </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap reveal" id="contact">
+  <div class="kicker">Contact</div>
+  <h2>Let’s Connect.</h2>
+  <p>Open to collaborations, internships and entry-level roles in:</p>
+  <p>Primary: Data Analyst / Junior Data Scientist</p>
+  <p>Secondary: Python Developer / ML Intern</p>
+  <div class="contact-links">
+    <a href="mailto:aliyaparis2023@gmail.com">aliyaparis2023@gmail.com</a>
+    <a href="tel:+919539482884">+91 95394 82884</a>
+    <a href="https://www.linkedin.com/in/aliya-s-87049b276" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a href="https://github.com/Aliya-333" target="_blank" rel="noopener">GitHub ↗</a>
+    <a href="https://www.instagram.com/_blue.iii_/" target="_blank" rel="noopener">Instagram ↗</a>
+
+  </div>
+  <p class="foot-note">Aliya S · BCA, AI &amp; Data Science</p>
+</footer>
+<script>
+const progress = document.querySelector(".progress span");
+const updateProgress = () => {
+  const max = document.documentElement.scrollHeight - innerHeight;
+  progress.style.width = `${max ? (scrollY / max) * 100 : 0}%`;
+};
+addEventListener("scroll", updateProgress, { passive: true });
+updateProgress();
+
+const observer = new IntersectionObserver(
+  (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("visible"); }),
+  { threshold: 0.12 }
+);
+document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const testCanvas = document.createElement("canvas");
+const hasWebGL = !!(testCanvas.getContext("webgl2") || testCanvas.getContext("webgl"));
+if (!reduceMotion && hasWebGL) {
+const COUNT = 6000, SPEED_MULT = 1;
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x000000, 0.01);
+const camera = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, 0.1, 2000);
+camera.position.set(0, 0, 100);
+const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
+renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
+Object.assign(renderer.domElement.style, { position:'fixed', inset:'0', zIndex:'-1', pointerEvents:'none', opacity:'0.5' });
+document.body.appendChild(renderer.domElement);
+
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+const bloomPass = new UnrealBloomPass(new THREE.Vector2(innerWidth, innerHeight), 1.5, 0.4, 0.85);
+bloomPass.strength = 1.8; bloomPass.radius = 0.4; bloomPass.threshold = 0;
+composer.addPass(bloomPass);
+
+const dummy = new THREE.Object3D(), color = new THREE.Color(), target = new THREE.Vector3();
+const instancedMesh = new THREE.InstancedMesh(new THREE.TetrahedronGeometry(0.25), new THREE.MeshBasicMaterial({ color: 0xffffff }), COUNT);
+instancedMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+scene.add(instancedMesh);
+const positions = [];
+for (let i = 0; i < COUNT; i++) {
+  positions.push(new THREE.Vector3((Math.random()-0.5)*100, (Math.random()-0.5)*100, (Math.random()-0.5)*100));
+  instancedMesh.setColorAt(i, color.setHex(0x00ff88));
+}
+
+const P = {cycle:20,bScale:16,scatterRadius:160,drift:0.6,flowerCount:10,fieldSpread:110,fieldCenterY:0,flowerSize:7,flapSpeed:6,flapAmp:0.55};
+const clock = new THREE.Clock();
+const frac = (v) => v - Math.floor(v);
+const deg = Math.PI / 180;
+
+function animate() {
+  requestAnimationFrame(animate);
+  const time = clock.getElapsedTime() * SPEED_MULT;
+  const safeCycle = P.cycle > 0.001 ? P.cycle : 4;
+  const phase = (time % safeCycle) / safeCycle;
+  const progress = 0.5 - 0.5 * Math.cos(phase * 2 * Math.PI);
+  const flapAngle = Math.sin(time * P.flapSpeed) * P.flapAmp * progress;
+  const bfColR = 0.243 + (0.910 - 0.243) * progress;
+  const bfColG = 0.651 + (0.639 - 0.651) * progress;
+  const bfColB = 1.0 + (0.239 - 1.0) * progress;
+  const sigma = P.scatterRadius / 3;
+  const driftAmp = sigma * 0.08 * P.drift;
+  const rot = time * 0.05, cosr = Math.cos(rot), sinr = Math.sin(rot);
+
+  for (let i = 0; i < COUNT; i++) {
+    const u = i / COUNT;
+    // Scatter cloud (Box-Muller gaussian ball) with gentle drift
+    const gu1 = Math.max(1e-6, frac(Math.sin(i * 12.9898) * 43758.5453));
+    const gu2 = frac(Math.sin(i * 78.233) * 12543.987);
+    const gu3 = Math.max(1e-6, frac(Math.sin(i * 39.346) * 25563.641));
+    const gu4 = frac(Math.sin(i * 54.716) * 31415.926);
+    const gR1 = Math.sqrt(-2 * Math.log(gu1)), gR2 = Math.sqrt(-2 * Math.log(gu3));
+    const gx = gR1 * Math.cos(2 * Math.PI * gu2), gy = gR1 * Math.sin(2 * Math.PI * gu2);
+    const gz = gR2 * Math.cos(2 * Math.PI * gu4);
+    const driftPhase = frac(Math.sin(i * 6.283) * 9999.123) * 2 * Math.PI;
+    const sx = gx * sigma + Math.sin(time * 0.3 + driftPhase) * driftAmp;
+    const sy = gy * sigma + Math.cos(time * 0.25 + driftPhase * 1.3) * driftAmp;
+    const sz = gz * sigma + Math.sin(time * 0.2 + driftPhase * 0.7) * driftAmp;
+
+    let bx = 0, by = 0, bz = 0, cR = bfColR, cG = bfColG, cB = bfColB;
+    let regCx = 0, regCy = -0.05, regEa = 0.06, regEb = 0.68, regAngle = 0, isWing = 0;
+    if (u < 0.19344) { regCx = 0.72; regCy = 0.52; regEa = 0.775; regEb = 0.425; regAngle = 32 * deg; isWing = 1; }
+    else if (u < 0.38688) { regCx = -0.72; regCy = 0.52; regEa = 0.775; regEb = 0.425; regAngle = -32 * deg; isWing = 1; }
+    else if (u < 0.49476) { regCx = 0.62; regCy = -0.28; regEa = 0.525; regEb = 0.35; regAngle = -28 * deg; isWing = 1; }
+    else if (u < 0.60264) { regCx = -0.62; regCy = -0.28; regEa = 0.525; regEb = 0.35; regAngle = 28 * deg; isWing = 1; }
+    else if (u < 0.607476) { regCx = 1.18; regCy = -0.62; regEa = 0.15; regEb = 0.055; regAngle = -55 * deg; isWing = 1; }
+    else if (u < 0.612312) { regCx = -1.18; regCy = -0.62; regEa = 0.15; regEb = 0.055; regAngle = 55 * deg; isWing = 1; }
+
+    if (u < 0.62) {
+      const radiusFrac = Math.sqrt(frac(Math.sin(i * 91.345) * 10000));
+      const phi = frac(Math.sin(i * 57.234) * 20000) * 2 * Math.PI;
+      const lx = radiusFrac * regEa * Math.cos(phi), ly = radiusFrac * regEb * Math.sin(phi);
+      const cosA = Math.cos(regAngle), sinA = Math.sin(regAngle);
+      const wx = regCx + lx * cosA - ly * sinA, wy = regCy + lx * sinA + ly * cosA;
+      bx = wx * P.bScale; by = wy * P.bScale;
+      bz = Math.abs(wx) * Math.sin(flapAngle) * P.bScale * isWing;
+    } else {
+      const flowerIndex = Math.floor(((u - 0.62) / 0.38) * P.flowerCount);
+      const theta = frac(Math.sin(i * 63.71) * 10000) * 2 * Math.PI;
+      const rr = frac(Math.sin(i * 84.19) * 10000);
+      const petalR = Math.abs(Math.cos(5 * theta)) * P.flowerSize;
+      const radiusFrac2 = Math.sqrt(rr);
+      const petalX = radiusFrac2 * petalR * Math.cos(theta), petalY = radiusFrac2 * petalR * Math.sin(theta);
+      // Flower centers on a spherical shell around the butterfly
+      const fhTheta = frac(Math.sin(flowerIndex * 17.53 + 11.1) * 10000) * 2 * Math.PI;
+      const fhCosPhi = frac(Math.sin(flowerIndex * 29.13 + 7.7) * 10000) * 2 - 1;
+      const fhSinPhi = Math.sqrt(Math.max(0, 1 - fhCosPhi * fhCosPhi));
+      const fhJitter = frac(Math.sin(flowerIndex * 41.91 + 3.3) * 10000);
+      const shellR = P.fieldSpread * (0.65 + 0.35 * fhJitter);
+      bx = shellR * fhSinPhi * Math.cos(fhTheta) + petalX * progress;
+      by = shellR * fhCosPhi + P.fieldCenterY + petalY * progress;
+      bz = shellR * fhSinPhi * Math.sin(fhTheta);
+      cR = 0.976; cG = 0.827 + (0.416 - 0.827) * radiusFrac2; cB = 0.325 + (0.686 - 0.325) * radiusFrac2;
+    }
+
+    const px = sx + (bx - sx) * progress, py = sy + (by - sy) * progress, pz = sz + (bz - sz) * progress;
+    target.set(px * cosr - pz * sinr, py, px * sinr + pz * cosr);
+    const glow = 0.85 + 0.15 * Math.sin(time * 2 + frac(Math.sin(i * 3.1415) * 4321.1234) * 2 * Math.PI);
+    color.setRGB(Math.min(1, cR * glow), Math.min(1, cG * glow), Math.min(1, cB * glow));
+
+    positions[i].lerp(target, 0.1);
+    dummy.position.copy(positions[i]);
+    dummy.updateMatrix();
+    instancedMesh.setMatrixAt(i, dummy.matrix);
+    instancedMesh.setColorAt(i, color);
+  }
+  instancedMesh.instanceMatrix.needsUpdate = true;
+  instancedMesh.instanceColor.needsUpdate = true;
+  composer.render();
+}
+animate();
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+  composer.setSize(innerWidth, innerHeight);
+});
+}
+</script>
+</body>
+</html>
